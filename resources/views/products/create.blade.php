@@ -12,40 +12,52 @@
    </div>
    <div class="container">
     <div class="row d-flex justify-content-center">
-<div class="col-md-10">
-    <div class="card border-0 shadow-lg my-3">
-<div class="card-header bg-dark">
-<h3 class="text-white">Create Products</h3>
-</div>
-<div class="card-body">
-    <div class="mb-3 ">
-        <label for="" class="form-label">Name</label>
-        <input type="text" placeholder="Name" class="form-control form-control-lg" name="name">
-    </div>
-    <div class="mb-3">
-        <label for="">Sku</label>
-        <input type="text" placeholder="sku" class="form-control form-control-lg" name="sku">
-    </div>
-    <div class="mb-3">
-        <label for="">Price </label>
-        <input type="text" placeholder="Price" class="form-control form-control-lg" name="price">
-    </div>
-    <div class="mb-3">
-        <label for="">Description</label>
-<textarea class="form-control" placeholder="Description" name="description" cols="20" rows="5"></textarea>
-    </div>
-    <div class="mb-3">
-        <label for="">Image</label>
-<input type="file" name="image" id="image">
-    </div>
-<div class="d-grid" >
-    <button class="btn btn-lg bg-primary text-white">Submit</button>
-</div>
+      <div class="col-md-10">
+        <div class="card border-0 shadow-lg my-3">
+          <div class="card-header bg-dark">
+            <h3 class="text-white">Create Products</h3>
+          </div>
+          <form action="{{ route('products.store') }}" method="post">
+            @csrf
 
-</div>
-</div>
+            <div class="card-body">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" placeholder="Name" class="form-control form-control-lg @error('name') is-invalid @enderror" name="name">
+                @error('name')
+                  <p class="invalid-feedback">{{ $message }}</p>
+                @enderror
+              </div>
+              <div class="mb-3">
+                <label for="sku">Sku</label>
+                <input type="text" placeholder="Sku" class="form-control form-control-lg @error('sku') is-invalid @enderror" name="sku">
+                @error('sku')
+                  <p class="invalid-feedback">{{ $message }}</p>
+                @enderror
+              </div>
+              <div class="mb-3">
+                <label for="price">Price</label>
+                <input type="text" placeholder="Price" class="form-control form-control-lg @error('price') is-invalid @enderror" name="price">
+                @error('price')
+                  <p class="invalid-feedback">{{ $message }}</p>
+                @enderror
+              </div>
+              <div class="mb-3">
+                <label for="description">Description</label>
+                <textarea class="form-control" placeholder="Description" name="description" cols="20" rows="5"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="image">Image</label>
+                <input type="file" name="image" id="image">
+              </div>
+              <div class="d-grid">
+                <button class="btn btn-lg bg-primary text-white">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-</div>
    </div>
   </body>
 </html>
