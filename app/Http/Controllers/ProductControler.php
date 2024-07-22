@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Product;
+
 
 class ProductControler extends Controller
 {
     //this method is for show product controller
     public function index()
     {
+        return view('products/list');
 
     }
         //this method is for show create product page
@@ -31,9 +34,15 @@ $validator = Validator::make($request->all(), $rules);
 if($validator->fails())
 {
     return redirect()->route('products.create')->withInput()->withErrors($validator);
+};
+$product = new Product();
+$product->name = $request->name;
+$product->sku = $request->sku;
+$product->price = $request->price;
+$product->description = $request->description;
+$product->save();
+return redirect()->route('products.index')->with('success', 'product created Successfully');
 }
-;
-    }
     // This method is for edit products
     public function edit()
     {
