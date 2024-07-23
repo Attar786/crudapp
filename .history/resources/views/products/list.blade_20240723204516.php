@@ -13,7 +13,7 @@
    <div class="container">
     <div class="row justify-content-center mt-4 ">
 <div class="col-md-10 d-flex justify-content-end">
-    <a href="{{ route('products.create') }}" class="btn btn-dark">Create</a>
+    <a href="" class="btn btn-dark">Create</a>
 
 </div>
 
