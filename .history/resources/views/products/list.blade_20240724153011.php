@@ -21,7 +21,7 @@
     <div class="row d-flex justify-content-center">
         @if(Session::has('success'))
         <div class="col-md-10">
-          <div class="alert alert-success m-3">
+          <div class="alert alert-success">
             {{ Session::get('success') }}
           </div>
         </div>
@@ -30,14 +30,13 @@
           <div class="card border-0 shadow-lg my-3">
             <div class="card-header bg-dark text-white">
                 <h3>Products </h3>
-
+            </div>
         </div>
     </div>
     <div class="card-body">
         <table class="table">
 <tr>
     <th>Id</th>
-    <th>Image</th>
     <th>Name</th>
     <th>Sku</th>
     <th>Price</th>
@@ -51,7 +50,7 @@
     <td>
 
 @if($product->image != "")
-<img width="45px" src="{{ asset('uploads/products/'.$product-> image) }}"/>
+<img width="45px" src="{{ assets('uploads/products/'.$product-> image) }}"/>
 
 @endif
 
@@ -68,13 +67,24 @@
 </tr>
 @endforeach
 @endif
-
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
         </table>
     </div>
+
+
+
+
+
+{{-- </div>
 </div>
-
-
-
-
-
+</div>
+</div> --}}
 

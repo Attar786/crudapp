@@ -21,7 +21,7 @@
     <div class="row d-flex justify-content-center">
         @if(Session::has('success'))
         <div class="col-md-10">
-          <div class="alert alert-success m-3">
+          <div class="alert alert-success">
             {{ Session::get('success') }}
           </div>
         </div>
