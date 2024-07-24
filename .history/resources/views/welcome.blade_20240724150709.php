@@ -80,7 +80,7 @@ h1 {
 <body>
     <div class="center">
         <h1>WELCOME</h1>
-        <h2>Laravel 11 Crud App</h2>
+        <h1>Laravel 11 Crud App</h1>
         <div class="btn">Enter</div>
       </div>
 </body>

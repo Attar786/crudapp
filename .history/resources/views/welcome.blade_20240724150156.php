@@ -7,7 +7,7 @@
     <style>
         html {
   background-color: #10151B;
-  background: url(https://images.unsplash.com/photo-1563268381-06ddf2b1f46d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTB8fHxlbnwwfHx8fHw%3D) no-repeat center center fixed;
+  background: url(https://static.pexels.com/photos/3797/black-and-white-sport-fight-boxer.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -80,7 +80,6 @@ h1 {
 <body>
     <div class="center">
         <h1>WELCOME</h1>
-        <h2>Laravel 11 Crud App</h2>
         <div class="btn">Enter</div>
       </div>
 </body>

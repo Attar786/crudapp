@@ -44,19 +44,13 @@ class ProductControler extends Controller
         $product->save();
 
         // Image storage code
-        if($request->image !='')
-        {
-            $image = $request->image;
+        $image = $request->image;
         $ext = $image->getClientOriginalExtension();
         $imageName = time().'.'.$ext;
 
 
-        $image->move(public_path('uploads/products'), $imageName);
-
         $product->image = $imageName;
         $product->save();
-        }
-
 
         return redirect()->route('products.index')->with('success', 'product created Successfully');
     }
