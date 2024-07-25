@@ -110,7 +110,6 @@ class ProductControler extends Controller
         $product = Product::findOrFail($id);
         File::delete(public_path('public/products/'.$product->image));
         $product->delete();
-        return redirect()->route('products.index')->with('success', 'product Deleted Successfully');
 
     }
 }
