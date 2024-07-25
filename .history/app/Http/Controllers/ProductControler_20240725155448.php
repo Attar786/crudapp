@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\File;
 use App\Models\Product;
 
 class ProductControler extends Controller
@@ -58,7 +57,7 @@ class ProductControler extends Controller
         }
 
 
-        return redirect()->route('products.index')->with('success', 'product updated Successfully');
+        return redirect()->route('products.index')->with('success', 'product created Successfully');
     }
     // This method is for edit products
     public function edit($id)
@@ -82,8 +81,9 @@ class ProductControler extends Controller
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
-            return redirect()->route('products.edit', $product->id)->withInput()->withErrors($validator);
+            return redirect()->route('products.edit')->withInput()->withErrors($validator);
         };
+        $product = new Product();
         $product->name = $request->name;
         $product->sku = $request->sku;
         $product->price = $request->price;
@@ -91,11 +91,7 @@ class ProductControler extends Controller
         $product->save();
 
         // Image storage code
-        if ($request->image != '')
-        {
-
-            File::delete(public_path('uploads/images/'.$request->image));
-
+        if ($request->image != '') {
             $image = $request->image;
             $ext = $image->getClientOriginalExtension();
             $imageName = time() . '.' . $ext;

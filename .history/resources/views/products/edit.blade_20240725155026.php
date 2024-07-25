@@ -23,7 +23,6 @@
             <h3 class="text-white">Edit Product</h3>
           </div>
           <form enctype="multipart/form-data" action="{{ route('products.update', $product->id) }}" method="post">
-            @method('put')
             @csrf
 
             <div class="card-body">

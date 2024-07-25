@@ -58,7 +58,7 @@ class ProductControler extends Controller
         }
 
 
-        return redirect()->route('products.index')->with('success', 'product updated Successfully');
+        return redirect()->route('products.index')->with('success', 'product created Successfully');
     }
     // This method is for edit products
     public function edit($id)
